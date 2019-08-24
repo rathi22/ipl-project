@@ -1,0 +1,29 @@
+Rajat Rathi, 160050015
+Tummidi Nikhil, 160050096
+
+We declare that the code submitted by us has been developed by us. Other than the code supplied for this course, we have not borrowed any piece of code from any source, be it the code developed by our class-mates, or code available from other students, or the code available on internet. We are aware of the fact that if any evidence to the contrary is discovered, the matter will be reported to the D-DAC with a recommendation of the harshest punishment possible.
+
+** An important note regarding this submission:
+        At first we tried to mirror the reference sclp implementation in generating the spim code.
+        But as the reference implementation does not always give the correct answer, we made an appropriate change:
+                    in ast-compile.cc:
+                        line 653 in place of line 654 (commented)
+            Now, our implementation works on the following case on which the reference implementation fails.
+            But as a result, the spim files don't match.
+
+            test case:
+                float b;
+
+                int g(int a, float b){
+                    int x;
+                    x = a*a;
+                    return x*3;
+                }
+
+                void main(){
+                    int a;
+                    a = 2;
+                    b = 1.0;
+                    a = g(a+a, b);
+                    print a;
+                }
